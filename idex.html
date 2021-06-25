@@ -1,0 +1,63 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Tournament Scoring System</title>
+</head>
+
+<body>
+    <script>
+        $(function() {
+            $("#topbar").load("topbar.php");
+        });
+    </script>
+    <div id="topbar"></div><br>
+    <div>
+
+        <script>
+            $(function() {
+                $("#header").load("header.html");
+            });
+        </script>
+        <div id="header"></div>
+
+        <br>
+        <section>
+            <div class="text-body">
+
+                <h1>Welcome to FLLTutorials Tournament Scoring System
+                    <script>
+                        function textFileToArray(filename) {
+                            var reader = (window.XMLHttpRequest != null) ?
+                                new XMLHttpRequest() :
+                                new ActiveXObject("Microsoft.XMLHTTP");
+                            reader.open("GET", filename, false);
+                            reader.send();
+                            return reader.responseText.split(/\r\n|\n|\r/); //split(/(\r\n|\n)/g)
+                        }
+                    </script>
+                </h1>
+            </div>
+        </section><br>
+        <section>
+            <div class="text-body" style="font-size: 20px;">
+
+                <p style="font-size: 150%;">
+                    <a href="welcome.php">Start/Access a Tournament</a><br>
+                </p>
+                Note: You will need to make an account to create/access a tournament.<br> <br> If you have any edits or would like to see features added, please <a href="mailto:team@ev3lessons.com">email</a>.
+                <br>
+            </div>
+        </section>
+        <br>
+        <script>
+            $(function() {
+                $("#footer").load("footer.html");
+            });
+        </script>
+        <div id="footer"></div>
+    </div>
+</body>

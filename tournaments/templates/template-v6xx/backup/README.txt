@@ -1,0 +1,1 @@
+These files constitute a complete archive of the activity of your tournament. 
