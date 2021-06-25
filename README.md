@@ -3,7 +3,7 @@
 Some setup notes:
 * Requires a Linux server with apache2, php, mysql
 * Needs to be placed in the root server directory
-* index.php, register.php need to have reCaptcha keys added
+* index.php, register.php, reset-password.php need to have reCaptcha keys added
 * config.php needs to have the mysql database linked
 
 mysql instructions:
