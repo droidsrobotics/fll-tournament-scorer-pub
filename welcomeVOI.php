@@ -48,7 +48,6 @@
       </div>
     </section><br>
     <div class="text-body" style="font-size: 20px;">
-
       <section>
 
         <?php

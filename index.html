@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="/js/download.js"></script>
+
+    <script>
+        language = "en"
+    </script>
+    <script src="/js/languages.js"></script>
+    <script src="/js/language-detector.js"></script>
+    <title>Tournament Scoring System</title>
+</head>
+
+<body>
+    <script>
+        $(function() {
+            $("#topbar").load("topbar.php");
+        });
+    </script>
+    <div id="topbar"></div><br>
+    <div>
+
+        <script>
+            $(function() {
+                $("#header").load("header.html");
+            });
+        </script>
+        <div id="header"></div>
+
+        <br>
+        <section>
+            <div class="text-body">
+
+                <h1>FLLTutorials Tournament Scoring System</h1>
+            </div>
+        </section><br>
+        <section>
+            <div class="text-body" style="font-size: 20px;">
+
+                <p style="font-size: 150%;">
+                    <a href="welcome.php">Start/Access a Tournament</a><br>
+                </p>
+                <b>Used by FIRST LEGO League tournaments all around the world. Updated for SUBMERGED!</b><br><br>
+
+                <p>Note: You will need to make an account to create/access a tournament.<br> <br> If you have any edits or would like to see features added, please<text> </text> <a href="mailto:team@ev3lessons.com">email</a>.</p>
+
+                <br>
+            </div>
+            Some sections are translated into the languages shown at the top -- generally the scorer and the rubrics are translated.<br><br><br> Latest versions of Google Chrome or Firefox recommended.
+        </section>
+        <br>
+        <script>
+            $(function() {
+                $("#footer").load("footer.html");
+            });
+        </script>
+        <div id="footer"></div>
+    </div>
+    <script src="/js/translate.js"></script>
+
+</body>

@@ -1,0 +1,3 @@
+RewriteEngine on
+#RewriteCond %{DOCUMENT_ROOT}/judges/rubric/teams/$1 -f
+RewriteRule ^(.*)$ auth.php?i=%{REQUEST_FILENAME}

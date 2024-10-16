@@ -1,8 +1,8 @@
 <?php
 	session_start();
 
-if (isset($_SESSION["username"]))
-    echo "Logged in as: ";
+// if (isset($_SESSION["username"]))
+//     echo "Logged in as: ";
 
 
 echo htmlspecialchars($_SESSION["username"] . "");;

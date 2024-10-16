@@ -1,16 +1,23 @@
 <?php
-if (strpos($_SERVER['SERVER_NAME'],"virtualopeninvitational") !== false) {
-  header("Location: welcomeVOI.php");
+if (strpos($_SERVER['SERVER_NAME'], "virtualopeninvitational") !== false) {
+  // header("Location: welcomeVOI.php");
 }
-if (!isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],"virtualopeninvitational")==false && strpos($_SERVER['HTTP_REFERER'],"flltutorials")==false) header("Location: /index.php?source=welcomeVOI.php");
+// if (!isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],"virtualopeninvitational")==false && strpos($_SERVER['HTTP_REFERER'],"flltutorials")==false) header("Location: /index.php?source=welcomeVOI.php");
 
 ?>
+
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="/js/download.js"></script>
 
+<script>
+    language = "en"
+</script>
+<script src="/js/languages.js"></script>
+<script src="/js/language-detector.js"></script>
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"> -->
   <title>Tournament Scoring System</title>
 </head>
@@ -38,7 +45,7 @@ if (!isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],"virtual
         <?php
         // Initialize the session
         session_start();
-        if (trim($_SESSION["username"])=="guest") header("Location: logout.php");
+        if (trim($_SESSION["username"]) == "guest") header("Location: logout.php");
 
 
         // Check if the user is logged in, if not then redirect him to login page
@@ -73,11 +80,12 @@ if (!isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],"virtual
         }
         ?> <br> <br>
         <p>
-          <a href="start.php" class="btn btn-warning btn-lg">Create Tournament</a><br><br>
+          <a href="start.php" class="btn btn-warning btn-lg">Create Tournament</a>
+          <a class="btn btn-success btn-lg" href="tournament.php">Access a Tournament</a><br>
 
         </p>
       </section><br>
-      <section>
+      <!-- <section>
         <div>
           <h2>Login to Existing Tournament:</h2>
         </div>
@@ -91,7 +99,7 @@ if (!isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],"virtual
 
             }
 
-            tournaments = textFileToArray('tournaments.txt')
+            // tournaments = textFileToArray('tournaments.txt')
             x = 0
             // while (x != tournaments.length) {
             //   //document.write('<button onclick="loadtourn(\''+tournaments[x]+'\')">'+tournaments[x]+'</button><br>')
@@ -105,21 +113,25 @@ if (!isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],"virtual
               <td>Date</td>
             </tr>
             <?php
-            foreach (glob("tournaments/*/tournament.txt*") as $filename) {
-              //	echo $filename."<br />";
-              $file = fopen($filename, "r");
-              $x = trim(fgets($file));
-              $y = str_replace("'", "\'", $x);
-              $link = str_replace("tournament.txt", "login.php", $filename);
-              echo '<tr><td><a href="' . $link . '">' . $x . '</a></td><td>' . trim(fgets($file)) . '</td><td>' . trim(fgets($file)) . '</td>';
-              fclose($file);
+            $tourns = glob("tournaments/*/tournament.txt*");
+            sort($tourns);
+            foreach ($tourns as $filename) {
+              if (file_exists(str_replace("tournament.txt", "userdata", $filename) ."/". $_SESSION["username"]) || $_GET["show"]=="all") {
+                //	echo $filename."<br />";
+                $file = fopen($filename, "r");
+                $x = trim(fgets($file));
+                $y = str_replace("'", "\'", $x);
+                $link = str_replace("tournament.txt", "login.php", $filename);
+                echo '<tr><td><a href="' . $link . '">' . $x . '</a></td><td>' . trim(fgets($file)) . '</td><td>' . trim(fgets($file)) . '</td>';
+                fclose($file);
+              }
             }
             ?>
           </table>
         </div>
 
     </div>
-    </section>
+    </section> -->
     <br>
     <script>
       $(function() {
@@ -128,4 +140,5 @@ if (!isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],"virtual
     </script>
     <div id="footer"></div>
   </div>
+  <script src="/js/translate.js"></script>
 </body>

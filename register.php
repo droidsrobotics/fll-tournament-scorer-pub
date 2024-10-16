@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="/js/download.js"></script>
 
+    <script>
+        language = "en"
+    </script>
+    <script src="/js/languages.js"></script>
+    <script src="/js/language-detector.js"></script>
     <title>Register</title>
     <style type="text/css">
         /* body{ font: 14px sans-serif; } */
@@ -80,7 +86,7 @@
                         <p>Please fill this form to create an account.</p>
 
                         <?php
-                        if (!isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],"virtualopeninvitational")==false && strpos($_SERVER['HTTP_REFERER'],"flltutorials")==false) header("Location: /index.php?source=welcomeVOI.php");
+                        // if (!isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],"virtualopeninvitational")==false && strpos($_SERVER['HTTP_REFERER'],"flltutorials")==false) header("Location: /index.php?source=welcomeVOI.php");
                         // Include config file
                         require_once "config.php";
 
@@ -96,7 +102,7 @@
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $url = 'https://www.google.com/recaptcha/api/siteverify';
                             $data = array(
-                                'secret' => 'XXXXXXXXXXXXXXXXXx', // FILL IN
+                                'secret' => 'INSERT SECRET KEY',
                                 'response' => $_POST["g-recaptcha-response"]
                             );
                             $options = array(
@@ -126,7 +132,7 @@
                                     session_start();
                                     $_SESSION["code"] = $code;
                                     $_SESSION["email"] = $_POST["username"];
-                                    exec('printf "To: ' . $teamuser . '\nFrom: noreply@ev3lessons.com\nSubject: FLLTutorials Tournament Scoring System\nWelcome. Your verification code is ' . $code . '." | msmtp ' . $teamuser . '');
+                                    exec('printf "To: ' . $teamuser . '\nFrom: noreply@ev3lessons.com\nSubject: FLLTutorials Tournament Scoring System\n\n\nWelcome. Your verification code is ' . $code . '." | msmtp ' . $teamuser . '');
                                     echo "<br><b style='color:red;'>You have been emailed a verification code. Please enter it below.</b><br>";
                                 }
 
@@ -300,4 +306,6 @@
         </script>
         <div id="footer"></div>
     </div>
+    <script src="/js/translate.js"></script>
+
 </body>

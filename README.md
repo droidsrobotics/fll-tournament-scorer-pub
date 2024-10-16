@@ -1,9 +1,9 @@
-# fll-tournament-scorer-2020-pub
+# fll-tournament-scorer public
 
 Some setup notes:
-* Requires a Linux server with apache2, php, mysql
+* Requires a UNIX (tested on Debian 12) server with apache2, php8, mysql
 * Needs to be placed in the root server directory
-* index.php, register.php, reset-password.php need to have reCaptcha keys added
+* register.php, reset-password.php need to have reCaptcha keys added
 * config.php needs to have the mysql database linked
 
 mysql instructions:
@@ -17,3 +17,6 @@ mysql instructions:
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 ```
+
+`msmtp` needs to be configured for the webserver to send emails for 2FA registration. Gmail works if you disable modern authentication.
+

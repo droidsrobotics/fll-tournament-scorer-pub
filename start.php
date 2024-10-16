@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-  header("location: login.php?auth=startbeta.php");
+  header("location: login.php?auth=start.php");
   exit;
 }
 
@@ -36,7 +36,7 @@ $file = 'tournaments.txt';
 if (isset($_POST['text'])) {
   /*    if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])):
         //your site secret key
-        $secret = '6LcK4DEUAAAAALT5142P8DWJxjA3RsgmdqUaQfuP';
+        $secret = 'INSERT SECRET KEY';
         //get verify response data
         $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
         $responseData = json_decode($verifyResponse);
@@ -92,7 +92,13 @@ if (isset($_POST['text'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="/js/download.js"></script>
 
+<script>
+    language = "en"
+</script>
+<script src="/js/languages.js"></script>
+<script src="/js/language-detector.js"></script>
   <title>Start</title>
 
 </head>
@@ -134,8 +140,10 @@ if (isset($_POST['text'])) {
           <!--<div class="g-recaptcha" data-sitekey="6LcK4DEUAAAAAAUGO2pq__6V0K51-DwreZYdOB3f"></div>-->
           <b>Tournament Version:</b><br>
           <select class="form-control" style="font-size:20px;max-width:500px; height:50px" id="version" name="version">
-            <option value="tournaments/templates/template-v6xx">FLL Challenge</option>
+            <option value="tournaments/templates/template-v8xx">FLL Challenge SUBMERGED</option>
+            <option value="tournaments/templates/template-v7xx">FLL Challenge CARGO CONNECT</option>
             <option value="tournaments/templates/template-explore-v6xx">FLL Explore</option>
+            <option value="tournaments/templates/template-v6xx">FLL Challenge RePlay</option>
           </select>
 <br><br>
           <input id="sub" class="btn btn-danger" value="Create" type="submit" />
@@ -162,5 +170,6 @@ If your tournament ALREADY exists, you will be taken directly to the urls. If yo
     <div id="footer"></div>
   </div>
   <script src='js/accordian.js'></script>
+  <script src="/js/translate.js"></script>
 
 </body>

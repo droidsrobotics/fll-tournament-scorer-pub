@@ -4,7 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="/js/download.js"></script>
 
+    <script>
+        language = "en"
+    </script>
+    <script src="/js/languages.js"></script>
+    <script src="/js/language-detector.js"></script>
     <title>Login</title>
 </head>
 
@@ -47,7 +53,7 @@
             <div class="text-body" style="font-size: 20px;">
 
                 <?php
-                                                if (!isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],"virtualopeninvitational")==false && strpos($_SERVER['HTTP_REFERER'],"flltutorials")==false) header("Location: /index.php?source=welcomeVOI.php");
+                                                // if (!isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'],"virtualopeninvitational")==false && strpos($_SERVER['HTTP_REFERER'],"flltutorials")==false) header("Location: /index.php?source=welcomeVOI.php");
                 // Initialize the session
                 session_start();
                 //  echo $_GET["auth"];
@@ -197,4 +203,6 @@
         </script>
         <div id="footer"></div>
     </div>
+    <script src="/js/translate.js"></script>
+
 </body>

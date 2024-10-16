@@ -96,7 +96,7 @@
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $url = 'https://www.google.com/recaptcha/api/siteverify';
                         $data = array(
-                            'secret' => 'XXXXXXXXXXXXXXXX', // FILL IN
+                            'secret' => 'INSERT SECRET KEY',
                             'response' => $_POST["g-recaptcha-response"]
                         );
                         $options = array(
@@ -166,7 +166,7 @@
                                         session_start();
                                         $_SESSION["code"] = $code;
                                         $_SESSION["email"] = $_POST["username"];
-                                        exec('printf "To: ' . $teamuser . '\nFrom: noreply@ev3lessons.com\nSubject: FLLTutorials Tournament Scoring System\nWelcome. Your verification code is ' . $code . '." | msmtp ' . $teamuser . '');
+                                        exec('printf "To: ' . $teamuser . '\nFrom: noreply@ev3lessons.com\nSubject: FLLTutorials Tournament Scoring System\n\n\nWelcome. Your verification code is ' . $code . '." | msmtp ' . $teamuser . '');
                                         echo "<br><b style='color:red;'>You have been emailed a verification code. Please enter it below.</b><br>";
 
                                     }
