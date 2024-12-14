@@ -65,7 +65,10 @@ if ($_SESSION["role"] !== "Tournament Director") {
     <?php
     if (strpos($_GET["page"], "..") !== false) die("Error");
     if (is_dir('./backup/' . $_GET["page"]) && $handle = opendir('./backup/' . $_GET["page"])) {
-        echo "<a href='backup.php?page=" . prev(end(explode("/", $_GET["page"]))) . "'><img width='50' src='http://archive.ev3lessons.com/folder.gif'>..</a><br>";
+        $x = explode("/", $_GET["page"]);
+        $a = end($x);
+        $b = prev($x);
+        echo "<a href='backup.php?page=" . $b . "'><img width='50' src='http://archive.ev3lessons.com/folder.gif'>..</a><br>";
 
         while (false !== ($entry = readdir($handle))) {
 
