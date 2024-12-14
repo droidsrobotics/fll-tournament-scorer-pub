@@ -938,7 +938,7 @@ function textFileToArray(filename)
         // document.getElementById("appstore").src = "assets/app-store/" + language + ".svg"
         // document.getElementById("googleplay").src = "assets/google-play/" + countrycode + "_get.svg"
 
-        document.getElementById('title').innerHTML = title
+        //document.getElementById('title').innerHTML = title
         document.getElementById('resetTxt').value = resetText
         $('#resetTxt').button('refresh');
 
