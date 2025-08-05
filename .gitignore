@@ -1,0 +1,9 @@
+./register.php
+./reset-password.php
+./config.php
+/tournaments/*
+!/tournaments/template
+!/tournaments/template-explore
+!/tournaments/templatebeta
+!/tournaments/templates/
+
