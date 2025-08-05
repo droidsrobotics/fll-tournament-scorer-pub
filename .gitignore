@@ -1,6 +1,6 @@
-./register.php
-./reset-password.php
-./config.php
+/register.php
+/reset-password.php
+/config.php
 /tournaments/*
 !/tournaments/template
 !/tournaments/template-explore
