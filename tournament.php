@@ -94,7 +94,7 @@ if (strpos($_SERVER['SERVER_NAME'], "virtualopeninvitational") !== false) {
             $tourns = glob("tournaments/*/tournament.txt*");
             sort($tourns);
             foreach ($tourns as $filename) {
-              if (file_exists(str_replace("tournament.txt", "userdata", $filename) ."/". $_SESSION["username"]) || $_GET["show"]=="all") {
+              if ((file_exists(str_replace("tournament.txt", "userdata", $filename) ."/". $_SESSION["username"]) || $_GET["show"]=="all") &&  $_SESSION["username"] != NULL) {
                 //	echo $filename."<br />";
                 $file = fopen($filename, "r");
                 $x = trim(fgets($file));

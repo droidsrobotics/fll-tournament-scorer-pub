@@ -36,7 +36,7 @@ $file = 'tournaments.txt';
 if (isset($_POST['text'])) {
   /*    if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])):
         //your site secret key
-        $secret = 'INSERT SECRET KEY';
+        $secret = '6LcK4DEUAAAAALT5142P8DWJxjA3RsgmdqUaQfuP';
         //get verify response data
         $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
         $responseData = json_decode($verifyResponse);
@@ -44,7 +44,7 @@ if (isset($_POST['text'])) {
   $name = $_POST['text'];
   $nameenc = md5($_POST['text']);
   if (file_exists('tournaments/' . $nameenc) != 1) {
-    exec('cp -r ' . $_POST['version'] . ' tournaments/' . $nameenc);
+    exec('cp -r tournaments/templates/template-' . $_POST['version'] . ' tournaments/' . $nameenc);
     // exec('cp -r ' . 'tournaments/templatebeta/ tournaments/' . $nameenc);
     // exec('cp -r ' . 'tournaments/backups/templatebeta/ tournaments/backups/' . $nameenc);
     // exec('cd tournaments/' . $nameenc . '; ln -s ' . '../backups/' . $nameenc .' backup; cd ../../');
@@ -134,16 +134,17 @@ if (isset($_POST['text'])) {
           <b>Region:</b><br>
           <input class="form-control" style="font-size:20px;max-width:500px; height:50px" type="text" rows="20" cols="50" id="region" name="region" value=""><br><br>
           <b>Competition Date:</b><br>
-          <input class="form-control" style="font-size:20px;max-width:500px; height:50px" type="text" rows="20" cols="50" id="date" name="date" value=""><br>
+          <input class="form-control" style="font-size:20px;max-width:500px; height:50px" type="date" rows="20" cols="50" id="date" name="date" value=""><br>
           <br>
 
           <!--<div class="g-recaptcha" data-sitekey="6LcK4DEUAAAAAAUGO2pq__6V0K51-DwreZYdOB3f"></div>-->
           <b>Tournament Version:</b><br>
           <select class="form-control" style="font-size:20px;max-width:500px; height:50px" id="version" name="version">
-            <option value="tournaments/templates/template-v8xx">FLL Challenge SUBMERGED</option>
-            <option value="tournaments/templates/template-v7xx">FLL Challenge CARGO CONNECT</option>
-            <option value="tournaments/templates/template-explore-v6xx">FLL Explore</option>
-            <option value="tournaments/templates/template-v6xx">FLL Challenge RePlay</option>
+            <option value="v9xx">FLL Challenge UNEARTHED</option>
+            <option value="v8xx">FLL Challenge SUBMERGED</option>
+            <option value="v7xx">FLL Challenge CARGO CONNECT</option>
+            <option value="explore-v6xx">FLL Explore</option>
+            <option value="v6xx">FLL Challenge RePlay</option>
           </select>
 <br><br>
           <input id="sub" class="btn btn-danger" value="Create" type="submit" />
@@ -151,7 +152,7 @@ if (isset($_POST['text'])) {
 
 
           <br>
-          <i>To create a tournament using the beta channel, click <a href="startbeta.php">here</a>.</i>
+<!--          <i>To create a tournament using the beta channel, click <a href="startbeta.php">here</a>.</i>-->
           <!--
 If your tournament ALREADY exists, you will be taken directly to the urls. If your tournament DOES NOT exist yet, you will be asked to create a password(s).-->
           </p>

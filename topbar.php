@@ -7,7 +7,7 @@ if (strpos($_SERVER['SERVER_NAME'], "testing") !== false) {
 <script src="/js/download.js"></script>
 
 <script>
-    language = "en"
+language = "en"
 </script>
 <script src="/js/languages.js"></script>
 <script src="/js/language-detector.js"></script>

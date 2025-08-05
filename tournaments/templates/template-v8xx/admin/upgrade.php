@@ -75,7 +75,7 @@ document.write('<a href="/upgrade.php#'+textFileToArray('/' + window.location.hr
 // check if form has been submitted
 if (isset($_POST['text']))
 {
-  $log = exec('cp -rfv ../../template/* ../ &> upgrade.log');
+  $log = exec('cp -rfv ../../templates/template-v8xx/* ../ &> upgrade.log');
 printf('<b style="color: red">Finished upgrading tournament</b><br><!--<a href="">Return</a>.-->');
 
 echo "";
@@ -83,7 +83,7 @@ echo "";
 
 // read the textfile
 
-$latest = trim(file_get_contents("../../template/version.txt"));
+$latest = trim(file_get_contents("../../templates/template-v8xx/version.txt"));
 $current = trim(file_get_contents("../version.txt"));
 
 // echo intval($latest) ."<br>";

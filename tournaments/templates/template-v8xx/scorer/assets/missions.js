@@ -180,3 +180,9 @@ function load2021() {
 }
 
 load2021()
+//document.addEventListener('DOMContentLoaded', function() {
+//    alert("Ready!");
+document.getElementById("title").innerHTML = "FLL SUBMERGED Scorer"
+//}, false);
+    
+    //window.onload = function() {document.getElementById("title").innerHTML = "FLL SUBMERGED Scorer"}
